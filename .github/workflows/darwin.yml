@@ -38,18 +38,26 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: BloodHoundCompatTool-darwin-x64
+        env:
+          GITHUB_TOKEN: ${{ secrets.BHCT_TOKEN }}
 
       - name: Upload archive for darwin-amd64 to GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           files: BloodHoundCompatTool-darwin-x64.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.BHCT_TOKEN }}
 
       - name: Upload binary for darwin-arm64 to GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           files: BloodHoundCompatTool-darwin-arm64
+        env:
+          GITHUB_TOKEN: ${{ secrets.BHCT_TOKEN }}
 
       - name: Upload archive for darwin-arm64 to GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           files: BloodHoundCompatTool-darwin-arm64.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.BHCT_TOKEN }}

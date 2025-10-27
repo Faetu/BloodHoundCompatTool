@@ -38,18 +38,26 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: BloodHoundCompatTool-linux-x64
+        env:
+          GITHUB_TOKEN: ${{ secrets.BHCT_TOKEN }}
 
       - name: Upload archive for linux-amd64 to GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           files: BloodHoundCompatTool-linux-x64.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.BHCT_TOKEN }}
 
       - name: Upload binary for linux-arm64 to GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           files: BloodHoundCompatTool-linux-arm64
+        env:
+          GITHUB_TOKEN: ${{ secrets.BHCT_TOKEN }}
 
       - name: Upload archive for linux-arm64 to GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           files: BloodHoundCompatTool-linux-arm64.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.BHCT_TOKEN }}
