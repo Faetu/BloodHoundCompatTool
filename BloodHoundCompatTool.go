@@ -200,7 +200,7 @@ func isHighValue(cptrObj map[string]any) bool {
 			}
 			if lgName, _ := lg["Name"].(string); lgName != "" {
 				lname := strings.ToLower(lgName)
-				if strings.Contains(lname, "domain admin") || strings.Contains(lname, "Enterprise Admins") || strings.Contains(lname, "Administrators") {
+				if strings.Contains(lname, "domain admin") || strings.Contains(lname, "enterprise admin") || strings.Contains(lname, "administrator") {
 					return true
 				}
 			}
