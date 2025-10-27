@@ -35,25 +35,21 @@ jobs:
           tar -czvf BloodHoundCompatTool-darwin-arm64.tar.gz BloodHoundCompatTool-darwin-arm64
 
       - name: Upload binary for darwin-amd64 to GitHub Release
-        uses: actions/upload-artifact@v4
+        uses: softprops/action-gh-release@v1
         with:
-          name: BloodHoundCompatTool-darwin-x64
-          path: ./BloodHoundCompatTool-darwin-x64
+          files: BloodHoundCompatTool-darwin-x64
 
       - name: Upload archive for darwin-amd64 to GitHub Release
-        uses: actions/upload-artifact@v4
+        uses: softprops/action-gh-release@v1
         with:
-          name: BloodHoundCompatTool-darwin-x64.tar.gz
-          path: ./BloodHoundCompatTool-darwin-x64.tar.gz
+          files: BloodHoundCompatTool-darwin-x64.tar.gz
 
       - name: Upload binary for darwin-arm64 to GitHub Release
-        uses: actions/upload-artifact@v4
+        uses: softprops/action-gh-release@v1
         with:
-          name: BloodHoundCompatTool-darwin-arm64
-          path: ./BloodHoundCompatTool-darwin-arm64
+          files: BloodHoundCompatTool-darwin-arm64
 
       - name: Upload archive for darwin-arm64 to GitHub Release
-        uses: actions/upload-artifact@v4
+        uses: softprops/action-gh-release@v1
         with:
-          name: BloodHoundCompatTool-darwin-arm64.tar.gz
-          path: ./BloodHoundCompatTool-darwin-arm64.tar.gz
+          files: BloodHoundCompatTool-darwin-arm64.tar.gz

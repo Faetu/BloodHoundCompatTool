@@ -35,25 +35,21 @@ jobs:
           tar -czvf BloodHoundCompatTool-windows-arm64.tar.gz BloodHoundCompatTool-windows-arm64.exe
 
       - name: Upload binary for windows-amd64 to GitHub Release
-        uses: actions/upload-artifact@v4
+        uses: softprops/action-gh-release@v1
         with:
-          name: BloodHoundCompatTool-windows-x64.exe
-          path: ./BloodHoundCompatTool-windows-x64.exe
+          files: BloodHoundCompatTool-windows-x64.exe
 
       - name: Upload archive for windows-amd64 to GitHub Release
-        uses: actions/upload-artifact@v4
+        uses: softprops/action-gh-release@v1
         with:
-          name: BloodHoundCompatTool-windows-x64.tar.gz
-          path: ./BloodHoundCompatTool-windows-x64.tar.gz
+          files: BloodHoundCompatTool-windows-x64.tar.gz
 
       - name: Upload binary for windows-arm64 to GitHub Release
-        uses: actions/upload-artifact@v4
+        uses: softprops/action-gh-release@v1
         with:
-          name: BloodHoundCompatTool-windows-arm64.exe
-          path: ./BloodHoundCompatTool-windows-arm64.exe
+          files: BloodHoundCompatTool-windows-arm64.exe
 
       - name: Upload archive for windows-arm64 to GitHub Release
-        uses: actions/upload-artifact@v4
+        uses: softprops/action-gh-release@v1
         with:
-          name: BloodHoundCompatTool-windows-arm64.tar.gz
-          path: ./BloodHoundCompatTool-windows-arm64.tar.gz
+          files: BloodHoundCompatTool-windows-arm64.tar.gz
