@@ -1,0 +1,59 @@
+name: Build for Linux
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    name: Build for Linux
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: "1.25.3"
+        continue-on-error: true
+
+      - name: Build for linux-amd64
+        run: |
+          GOOS=linux GOARCH=amd64 go build -v -o BloodHoundCompatTool-linux-x64
+
+      - name: Build for linux-arm64
+        run: |
+          GOOS=linux GOARCH=arm64 go build -v -o BloodHoundCompatTool-linux-arm64
+
+      - name: Archive Binary for linux-amd64
+        run: |
+          tar -czvf BloodHoundCompatTool-linux-x64.tar.gz BloodHoundCompatTool-linux-x64
+
+      - name: Archive Binary for linux-arm64
+        run: |
+          tar -czvf BloodHoundCompatTool-linux-arm64.tar.gz BloodHoundCompatTool-linux-arm64
+
+      - name: Upload binary for linux-amd64 to GitHub Release
+        uses: actions/upload-artifact@v4
+        with:
+          name: BloodHoundCompatTool-linux-x64
+          path: ./BloodHoundCompatTool-linux-x64
+
+      - name: Upload archive for linux-amd64 to GitHub Release
+        uses: actions/upload-artifact@v4
+        with:
+          name: BloodHoundCompatTool-linux-x64.tar.gz
+          path: ./BloodHoundCompatTool-linux-x64.tar.gz
+
+      - name: Upload binary for linux-arm64 to GitHub Release
+        uses: actions/upload-artifact@v4
+        with:
+          name: BloodHoundCompatTool-linux-arm64
+          path: ./BloodHoundCompatTool-linux-arm64
+
+      - name: Upload archive for linux-arm64 to GitHub Release
+        uses: actions/upload-artifact@v4
+        with:
+          name: BloodHoundCompatTool-linux-arm64.tar.gz
+          path: ./BloodHoundCompatTool-linux-arm64.tar.gz
